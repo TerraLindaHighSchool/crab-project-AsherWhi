@@ -17,36 +17,36 @@ public class OceanWorld extends World
         super(560, 560, 1);
         prepare();
     }
-    
+
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
     private void prepare()
     {
-        SeaHorse SeaHorse = new SeaHorse();
-        addObject(SeaHorse,107,113);
-        Seal Seal = new Seal();
-        addObject(Seal,321,458);
-        Seed Seed = new Seed();
-        addObject(Seed,458,251);
-        Seed Seed2 = new Seed();
-        addObject(Seed2,64,405);
-        Seed Seed3 = new Seed();
-        addObject(Seed3,171,279);
-        Seed Seed4 = new Seed();
-        addObject(Seed4,358,97);
-        Seed Seed5 = new Seed();
-        addObject(Seed5,441,474);
-        Seed Seed6 = new Seed();
-        addObject(Seed6,148,506);
-        Seed Seed7 = new Seed();
-        addObject(Seed7,309,288);
-        Seed Seed8 = new Seed();
-        addObject(Seed8,175,32);
-        Seed Seed9 = new Seed();
-        addObject(Seed9,43,216);
-        Seed Seed10 = new Seed();
-        addObject(Seed10,514,95);
+        for (int i = 0; i < 1; i++) { 
+            SeaHorse seaHorse = new SeaHorse();
+            int imgWidth = seaHorse.getImage().getWidth();
+            int imgHeight = seaHorse.getImage().getHeight();
+            int posx = Greenfoot.getRandomNumber(getWidth() - imgWidth) + imgWidth/2;
+            int posy = Greenfoot.getRandomNumber(getHeight() - imgHeight) + imgWidth/2;
+            addObject(seaHorse,posx,posy);
+        }
+        for(int i = 0; i < 1; i++) {
+            Seal seal = new Seal();
+            int imgWidth = seal.getImage().getWidth();
+            int imgHeight = seal.getImage().getHeight();
+            int posx = Greenfoot.getRandomNumber(getWidth() - imgWidth) + imgWidth/2;
+            int posy = Greenfoot.getRandomNumber(getHeight() - imgHeight) + imgWidth/2;
+            addObject(seal,posx,posy);
+        }
+        for(int i = 0; i < 9; i++) {
+            Seed seed = new Seed();
+            int imgWidth = seed.getImage().getWidth();
+            int imgHeight = seed.getImage().getHeight();
+            int posx = Greenfoot.getRandomNumber(getWidth() - imgWidth) + imgWidth/2;
+            int posy = Greenfoot.getRandomNumber(getHeight() - imgHeight) + imgWidth/2;
+            addObject(seed,posx,posy);  
+        }
     }
 }

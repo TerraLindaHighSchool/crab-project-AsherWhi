@@ -11,22 +11,10 @@ public class SeaHorse extends Actor
     public void act()
     {
         move(0);
-        turnAtEdge();
         checkKeyPress();
         onCollision();
     }
-
-    // Moves the Crab
-    
-    // Turns the crab
-    private void turnAtEdge()
-    {
-        if (isAtEdge())
-        {
-            turn(0);
-        }
-     }
-    // Checks for user key presses so user can turn the Crab
+    // Checks for user key presses so user can move the Crab
     private void checkKeyPress()
     {
         if(Greenfoot.isKeyDown("d"))
@@ -68,7 +56,7 @@ public class SeaHorse extends Actor
         {
             Greenfoot.playSound("au.wav");
             Greenfoot.stop();
-             
         }
     }
-}
+}    
+    
